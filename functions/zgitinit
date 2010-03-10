@@ -1,3 +1,4 @@
+#!/bin/zsh
 ##
 ## Load with `autoload -U zgitinit; zgitinit'
 ##
@@ -204,7 +205,7 @@ zgit_svnhead() {
 
 	git show --raw $commit | \
 		grep git-svn-id | \
-			sed -re 's/^\s*git-svn-id: .*@([0-9]+).*$/\1/'
+			sed -Ee 's/^\s*git-svn-id: .*@([0-9]+).*$/\1/'
 }
 
 zgit_rebaseinfo() {
@@ -234,12 +235,16 @@ zgit_rebaseinfo() {
 }
 
 zgitinit() {
-	typeset -ga chpwd_functions
-	typeset -ga preexec_functions
-	typeset -ga precmd_functions
-	chpwd_functions+='zgit_chpwd_hook'
-	preexec_functions+='zgit_preexec_hook'
-	precmd_functions+='zgit_precmd_hook'
+	#function preexec { zgit_preexec_hook }
+	#function precmd  { zgit_precmd_hook  }
+	#function chpwd   { zgit_chpwd_hook   }
+
+	#typeset -ga chpwd_functions
+	#typeset -ga preexec_functions
+	#typeset -ga precmd_functions
+	#chpwd_functions+='zgit_chpwd_hook'
+	#preexec_functions+='zgit_preexec_hook'
+	#precmd_functions+='zgit_precmd_hook'
 }
 
 zgitinit

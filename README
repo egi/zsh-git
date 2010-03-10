@@ -1,6 +1,16 @@
-http://www.wunjo.org/zsh-git
+README
 
-This is my git-enabled zsh prompt.
+This is my attempt to bring git-enabled zsh prompt into the zsh-template-osx
+framework, based on the work of jcorbin. I manage to install this by putting
+all the scripts under functions directory in the
+/Library/init/zsh/zshrc.d/local-functions/general/ directory.
+
+My version is actually a backward-compatibility hack to zsh version 4.3.4,
+available by default on OSX Leopard.
+
+ORIGINAL README
+
+http://www.wunjo.org/zsh-git
 
 I got fed up with looking at everyone's half-baked kludges, so I decided to try
 to do better.
